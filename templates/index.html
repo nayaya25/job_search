@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JobMatch</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-white text-gray-800">
+
+  <!-- Header -->
+  <header class="flex justify-between items-center px-6 py-4 shadow-md">
+    <div class="text-blue-600 font-bold text-lg">JobMatch</div>
+    <div class="space-x-4">
+      <a href="{{ url_for('login') }}" class="text-sm text-blue-700 hover:underline">Sign In</a>
+      <a href="{{ url_for('signup') }}" class="bg-blue-600 text-white text-sm px-4 py-2 rounded hover:bg-blue-700">Sign Up</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-blue-600 text-white text-center py-20">
+    <h1 class="text-4xl font-bold mb-4">Find Your Dream Job Today</h1>
+    <p class="text-lg mb-6">Match your skills with the perfect opportunities</p>
+    <a href="{{ url_for('signup') }}" class="bg-white text-blue-600 font-semibold px-6 py-2 rounded hover:bg-gray-100">Get Started</a>
+  </section>
+
+  <!-- Why Choose Section -->
+  <section class="py-16 px-6 text-center">
+    <h2 class="text-2xl font-semibold mb-10">Why Choose JobMatch</h2>
+    <div class="flex justify-center space-x-12">
+      <div>
+        <div class="text-3xl mb-2">🔍</div>
+        <h3 class="font-semibold mb-1">Smart Job Matching</h3>
+        <p class="text-sm">Find jobs that perfectly match your skills and experience</p>
+      </div>
+      <div>
+        <div class="text-3xl mb-2">⚡</div>
+        <h3 class="font-semibold mb-1">Quick Apply</h3>
+        <p class="text-sm">Apply to multiple jobs with your saved profile</p>
+      </div>
+      <div>
+        <div class="text-3xl mb-2">📈</div>
+        <h3 class="font-semibold mb-1">Track Progress</h3>
+        <p class="text-sm">Monitor your applications and interview status</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Getting Started Section -->
+  <section class="bg-gray-50 py-16 px-6 text-center">
+    <h2 class="text-2xl font-semibold mb-10">Getting Started</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div class="bg-white p-6 rounded shadow-md">
+        <h3 class="text-blue-600 font-semibold mb-2">Step 1</h3>
+        <h4 class="font-bold mb-1">Create Your Profile</h4>
+        <p class="text-sm">Sign up and add your skills and experience</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow-md">
+        <h3 class="text-blue-600 font-semibold mb-2">Step 2</h3>
+        <h4 class="font-bold mb-1">Browse Matches</h4>
+        <p class="text-sm">Explore jobs that match your profile</p>
+      </div>
+      <div class="bg-white p-6 rounded shadow-md">
+        <h3 class="text-blue-600 font-semibold mb-2">Step 3</h3>
+        <h4 class="font-bold mb-1">Apply and Track</h4>
+        <p class="text-sm">Submit applications and track your progress</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white text-center py-4 text-sm">
+    © 2025 JobMatch. All rights reserved.
+  </footer>
+
+</body>
+</html>

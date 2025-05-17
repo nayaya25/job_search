@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JobMatch - Create Post</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">JobMatch</div>
+      <nav>
+        <a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ url_for('jobs') }}"><i class="fas fa-briefcase"></i> Jobs</a>
+      </nav>
+    </header>
+    
+    <div class="post-form-container">
+      <h2><i class="fas fa-pen-alt"></i> Create a Professional Update</h2>
+      
+      <!-- Add form element with action and method -->
+      <form action="{{ url_for('submit_post') }}" method="post">
+        <div class="post-form">
+          <textarea id="postContent" name="content" placeholder="Share a professional update..."></textarea>
+          
+          <div class="attachment-preview" id="attachmentPreview"></div>
+          
+          <div class="attachment-options" id="attachmentOptions">
+            <div class="attachment-type">
+              <button type="button" id="addLinkBtn"><i class="fas fa-link"></i> Link</button>
+              <button type="button" id="addImageBtn"><i class="fas fa-image"></i> Image</button>
+              <button type="button" id="addVideoBtn"><i class="fas fa-video"></i> Video</button>
+            </div>
+            
+            <div class="attachment-input" id="linkInput">
+              <input type="url" id="linkUrl" placeholder="Paste URL here">
+              <button type="button" class="primary-button" id="addLink">Add Link</button>
+            </div>
+            
+            <div class="attachment-input" id="imageInput">
+              <input type="url" id="imageUrl" placeholder="Paste image URL here">
+              <button type="button" class="primary-button" id="addImage">Add Image</button>
+            </div>
+            
+            <div class="attachment-input" id="videoInput">
+              <input type="url" id="videoUrl" placeholder="Paste video URL here">
+              <button type="button" class="primary-button" id="addVideo">Add Video</button>
+            </div>
+          </div>
+          
+          <div class="post-actions">
+            <button type="button" class="secondary-button" id="insertButton">
+              <i class="fas fa-paperclip"></i> Attach Media
+            </button>
+            <!-- Change regular button to submit button -->
+            <button type="submit" class="primary-button" id="postButton">
+              <i class="fas fa-paper-plane"></i> Post Update
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
