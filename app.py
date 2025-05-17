@@ -58,7 +58,9 @@ def init_db():
                 id INTEGER PRIMARY KEY AUTOINCREMENT,
                 title TEXT NOT NULL,
                 description TEXT,
-                posted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+                posted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+
             )
         ''')
         cursor.execute('''
@@ -252,7 +254,7 @@ def profile():
     ).fetchone()
     conn.close()
 
-    return render_template('profile.html', 
+    return render_template('profile.html',
                          name=user['name'],
                          email=user['email'],
                          join_date=user['created_at'])

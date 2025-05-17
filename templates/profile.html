@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile- JobMatch</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f9fafb;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 3rem;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .logo {
+      color: #2563eb;
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-decoration: none;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #374151;
+      font-weight: 500;
+      margin-left: 1.5rem;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: #2563eb;
+    }
+
+    nav a i {
+      margin-right: 5px;
+    }
+
+    .feed {
+      padding: 2rem 3rem;
+    }
+
+    .feed-title {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+      color: #111827;
+    }
+
+    #emptyFeedMessage {
+      text-align: center;
+      color: #6b7280;
+      margin-top: 2rem;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    #emptyFeedMessage i {
+      font-size: 48px;
+      margin-bottom: 15px;
+      color: #d1d5db;
+    }
+
+    .create-post-link {
+      display: inline-block;
+      margin-top: 1rem;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .create-post-link:hover {
+      text-decoration: underline;
+    }
+
+    .logout-btn {
+      background: none;
+      border: none;
+      color: #374151;
+      font-weight: 500;
+      margin-left: 1.5rem;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+    }
+
+    .logout-btn:hover {
+      color: #2563eb;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">JobMatch Profile</div>
+      <nav>
+        <a href="{{ url_for('home') }}"><i class="fas fa-home"></i> Home</a>
+        <a href="{{ url_for('jobs') }}"><i class="fas fa-briefcase"></i> Jobs</a>
+      </nav>
+    </header>
+    <div class="feed">
+      <div class="feed-title">Welcome, {{ name }}!</div>
+      <div class="feed-title">This is your user Profile</div>
+
+      <div id="postsContainer">
+        <div class="footer-text">
+          <i class="fas fa-message"></i>
+          <p>EMAIL: {{ email }}</p>
+        </div>
+        <div class="footer-text">
+          <i class="fas fa-message"></i>
+          <p>JOINED ON: {{ join_date }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
